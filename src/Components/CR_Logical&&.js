@@ -8,7 +8,7 @@ const Logical = () => {
 
   return (
     <div>
-        <h1>Conditional Rendering using Logical &&</h1>
+      <h1>Conditional Rendering using Logical &&</h1>
       {isLoggedIn && <p>Welcome, user!</p>}
       {!isLoggedIn && <p>Please log in.</p>}
       <button onClick={isLoggedIn ? handleLogout : handleLogin}>
