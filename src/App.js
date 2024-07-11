@@ -1,5 +1,5 @@
-import { React } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React  from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import FunctionalComponent from "./Components/Functional.js";
 import LifecycleDemo from "./Components/Class.js";
 import Wish from "./Components/prop.js";
@@ -7,12 +7,15 @@ import Counter from "./Components/State.js";
 import Counting from "./Components/useEffect.js";
 import Form from "./Components/Eventhandling.js";
 import ConditionalRendering from "./Components/ConditionalRendering.js";
+import Parent from './Components/Parent.js';
+import Hook from './Hooks/Concept.js';
+
 
 
 function App() {
   return (
 
-    <Router>
+    <>
       <nav>
         <ul>
           <li>
@@ -36,6 +39,12 @@ function App() {
           <li>
             <Link to="/conditional">Conditional rendering</Link>
           </li>
+          <li>
+            <Link to="/parentChild">Passing prop from child to parent</Link>
+          </li>
+          <li>
+            <Link to="/hook">Hooks</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -45,15 +54,17 @@ function App() {
         <Route path="/wish" element={<Wish word="Great" />} />
         <Route path="/counting" element={<Counting />} />
         <Route path="/form" element={<Form />} />
-        <Route path="/conditional" element={<ConditionalRendering />} />
+        <Route path="/conditional/*" element={<ConditionalRendering />} />
+        <Route path="/parentChild" element={<Parent/>}/>
+        <Route path="/hook/*" element={<Hook/>}/>
       </Routes>
-    </Router>
-
-
-
-
-
-  );
+    </>
+  //  <>
+  // <Hook/>
+  // <ConditionalRendering />
+  
+  //   </>
+    );
 }
 
 export default App;

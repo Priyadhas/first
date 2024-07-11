@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ConditionalRendering = () => {
+const InLineConditionalRendering = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => setIsLoggedIn(true);
@@ -23,4 +23,4 @@ const ConditionalRendering = () => {
   );
 };
 
-export default ConditionalRendering;
+export default InLineConditionalRendering;
